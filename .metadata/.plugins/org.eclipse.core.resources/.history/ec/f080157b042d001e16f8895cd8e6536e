@@ -1,0 +1,46 @@
+package com.HotelStaff.Config;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@Configuration
+@EnableTransactionManagement
+@EnableJpaRepositories(
+		entityManagerFactoryRef = "",
+		basePackages = {"com.HotelStaff.Repository"},
+		transactionManagerRef = ""
+		)
+public class StaffDBConfiguration {
+	
+	
+	// this is used to get properties from property file
+	@Autowired
+	private Environment environment;  
+	
+	
+	@Bean
+	@Primary
+	public DataSource dataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		System.out.println("URL value: "+ environment.getProperty("spring.staff-datasource.url"));
+		dataSource.setUrl(environment.getProperty("spring.staff-datasource.url"));
+		dataSource.setUsername(environment.getProperty("spring.staff-datasource.username"));
+		dataSource.setPassword(environment.getProperty("spring.staff-datasource.password"));
+		
+		
+		
+		return dataSource;
+	}
+	
+//	Have to create three beans: 1. Data source, 2. EntityManagerFactory, 3. PlateFormTransactionManager
+	
+
+}

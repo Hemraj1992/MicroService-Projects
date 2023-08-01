@@ -1,0 +1,27 @@
+package offic.test;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class test {
+
+	public static void main(String[] args) throws ParseException {
+		// TODO Auto-generated method stub
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date1 = sdf.parse("2020-01-30");
+        Date date2 = sdf.parse("2020-01-31");
+        
+        int result = date1.compareTo(date2);
+        if (result == 0) {
+            System.out.println("Date1 is equal to Date2");
+        } else if (result > 0) {
+            System.out.println("Date1 is after Date2");
+        } else if (result < 0) {
+            System.out.println("Date1 is before Date2");
+        } 
+	}
+
+	
+}

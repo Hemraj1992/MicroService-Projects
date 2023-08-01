@@ -1,0 +1,5 @@
+package com.HotelService.Config;
+
+public class ServiceDBConfig {
+
+}

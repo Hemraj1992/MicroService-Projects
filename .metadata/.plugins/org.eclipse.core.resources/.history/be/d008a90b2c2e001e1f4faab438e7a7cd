@@ -1,0 +1,9 @@
+package hemraj.Java_9;
+
+public class Collections {
+
+	public static void main(String[] args) {
+		System.out.println("Hi it's running...");
+		
+	}
+}

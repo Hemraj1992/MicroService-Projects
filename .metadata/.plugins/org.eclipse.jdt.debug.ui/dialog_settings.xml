@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth0" value="138"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth1" value="470"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth2" value="100"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.sortColumn" value="1"/>
+	<item key="LAST_PATH_SETTING" value="C:\D Drive\Applications\jdk-20_windows-x64_bin\jdk-20.0.1\lib"/>
+	<section name="expressionHistory">
+	</section>
+	<section name="org.eclipse.jdt.internal.debug.ui.ExpressionInformationControlCreator$ExpressionInformationControl">
+		<item key="WIDTH" value="816"/>
+		<item key="HEIGHT" value="256"/>
+		<item key="SashWeightTree" value="500"/>
+		<item key="SashWeightDetails" value="500"/>
+	</section>
+</section>

@@ -1,0 +1,31 @@
+server:
+  port: 8004
+  
+spring:
+  application:
+    name: API-Gateway
+    
+  cloud:
+    gateway:
+      routes:
+      - id: User-Service
+        uri: lb://User-Service
+        predicates:
+        - Path=/user/**
+        
+      - id: Hotel-Service
+        uri: lb://Hotel-Service
+        predicates:
+        - Path=/Hotel/**, /Staff/**
+        
+      - id: Rating-Service
+        uri: lb://Rating-Service
+        predicates:
+        - Path=/Rating/**
+          
+  
+  config:
+    import: configserver:http://localhost:8010
+    
+  profiles:
+    active: default

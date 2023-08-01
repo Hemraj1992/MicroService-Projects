@@ -1,0 +1,23 @@
+server:
+  port: 8002
+  
+  
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/HotelService
+    username: root
+    password: root
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+  application:
+    name: Hotel-Service
+    
+  config:
+    import: optional:configserver:http://localhost:8010
+    
+  profiles:
+    active: default    
