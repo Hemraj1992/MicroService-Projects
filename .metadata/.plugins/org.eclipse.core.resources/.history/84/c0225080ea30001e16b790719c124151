@@ -1,0 +1,31 @@
+package hemraj.Java_9;
+
+import java.time.ZoneId;
+import java.util.stream.Stream;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.io.IOException;
+
+public class Collections {
+	public static void main(String[] args) {
+	      HttpClient httpClient = HttpClient.newBuilder()
+	         .version(HttpClient.Version.HTTP_2)
+	         .connectTimeout(Duration.ofSeconds(10))
+	         .build(); 
+	         try {
+	            HttpRequest request = HttpRequest.newBuilder()
+	            .GET()
+	            .uri(URI.create("https://www.google.com"))
+	            .build();                              
+	            HttpResponse<String> response = httpClient.send(request,
+	            HttpResponse.BodyHandlers.ofString()); 
+
+	         System.out.println("Status code: " + response.statusCode());                            
+	         System.out.println("Headers: " + response.headers().allValues("content-type"));
+	         System.out.println("Body: " + response.body());
+	      } catch (IOException | InterruptedException e) {
+	         e.printStackTrace();
+	      }
+	   }
+
+}
